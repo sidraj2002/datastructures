@@ -10,15 +10,18 @@
 #include <stdio.h>
 #include <string>
 #include <stdlib.h>
+#include "BinaryTree.hpp"
 
 using namespace std;
+
 struct node* head2 = NULL;   //Global Replica Head
 struct node* head = NULL;   //Global Head
+
+
 struct node {
-   int x = 0;
+    int x = 0;
     struct node* next;
 };
-
 // Return type struct pointer: Insert Node to the list in-line. Returns pointer to new Head.
 
 struct node* insertNode(int val){
@@ -46,7 +49,7 @@ struct node* insertNode(int val){
 
 void printList(struct node* headNode){
     struct node* temp1;
-   
+    
     
     temp1 = headNode;
     while(temp1->next!=NULL){
@@ -57,7 +60,7 @@ void printList(struct node* headNode){
     if (temp1->next == NULL){
         printf("%d\n", temp1->x);
     }
-   }
+}
 
 //Replicate list: Void function takes
 
@@ -71,22 +74,4 @@ struct node* replicateList(struct node* headnode){
         temp2 = temp2->next;
     }
     return newHead;
-}
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    
-    head = insertNode(8);
-    head = insertNode(7);
-    head = insertNode(6);
-    head = insertNode(5);
-    head = insertNode(4);
-    head = insertNode(3);
-    head = insertNode(2);
-    head2 = replicateList(head);
-    printList(head);
-    printList(head2);
-    
-    return 0;
 }
