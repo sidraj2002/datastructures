@@ -28,6 +28,7 @@ struct nodeLeaf {
     
 };
 
+//Initialize each leaf with Null pointers for Left and Right
 struct nodeLeaf* nodeInit(struct nodeLeaf* headLeaf){
     
     headLeaf = new (struct nodeLeaf);
@@ -36,6 +37,7 @@ struct nodeLeaf* nodeInit(struct nodeLeaf* headLeaf){
     return headLeaf;
 };
 
+//Insert new Leaf. For Root pass in Headleaf first
 struct nodeLeaf* insertLeaf(int value, struct nodeLeaf* tempLeaf){
     
     temp2 = nodeInit(temp2);
@@ -57,6 +59,7 @@ struct nodeLeaf* insertLeaf(int value, struct nodeLeaf* tempLeaf){
         return temp2;
 }
 
+//Recursive print Leaves
 void printLeaf(struct nodeLeaf* headLeaf){
     
     if(headLeaf == NULL){
@@ -68,6 +71,7 @@ void printLeaf(struct nodeLeaf* headLeaf){
     printf("Right%d\n", headLeaf->val);
 };
 
+//Create a copy of the Tree
 struct nodeLeaf* copyTree(struct nodeLeaf* headLeaf){
     
     headCopy = nodeInit(headCopy);
