@@ -6,6 +6,12 @@
 //  Copyright © 2017 Siddharth Rajguru. All rights reserved.
 //
 
+#include <sys/types.h>
+#include <unistd.h>
+#include <iostream>
+#include <iomanip>
+#include <pthread.h>
+
 #include "BinaryTree.hpp"
 #include <iostream>
 #include <stdio.h>
@@ -141,10 +147,23 @@ int main(int argc, const char * argv[]) {
     temp = insertLeaf(60, temp);
     temp = insertLeaf(80, temp);
     
-    copyTree(headLeaf);
     printLeaf(headLeaf);
-    printf("Copy Leaf\n");
+    printf("Empty Copy Leaf\n");
     printLeaf(headCopy);
+    printf("Launching Child process to Copy Tree\n");
+    pid_t pid1 = fork();
+    
+    if(pid1 < 0){
+        printf("Fork error\n");
+        exit(1);
+    } else if(pid1 == 0){
+        
+        printf("I am a child %d\n", getpid());
+        headCopy = copyTree(headLeaf);
+        printLeaf(headCopy);
+        exit(0);
+    }
+    
     
     return 0;
 }
