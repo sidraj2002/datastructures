@@ -1,2 +1,2 @@
 # datastructures
-Practice districts and algos
+Practice datastructures and algos
