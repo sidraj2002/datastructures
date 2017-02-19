@@ -18,6 +18,7 @@ struct nodeLeaf* headLeaf = NULL;
 struct nodeLeaf* tempLeaf = NULL;
 struct nodeLeaf* temp = NULL;
 struct nodeLeaf* temp2 = NULL;
+struct nodeLeaf* headCopy = NULL;
 
 struct nodeLeaf {
     
@@ -65,6 +66,22 @@ void printLeaf(struct nodeLeaf* headLeaf){
     printf("Left%d\n", headLeaf->val);
     printLeaf(headLeaf->right);
     printf("Right%d\n", headLeaf->val);
+};
+
+struct nodeLeaf* copyTree(struct nodeLeaf* headLeaf){
+    
+    headCopy = nodeInit(headCopy);
+    
+    if(headLeaf == NULL){
+        return headCopy;
+    }
+    
+    copyTree(headLeaf->left);
+    headCopy->left = headLeaf->left;
+    copyTree(headLeaf->right);
+    headCopy->right = headLeaf->right;
+    
+    return headCopy;
 };
     
   /*  struct nodeLeaf* printLeaf = NULL;
@@ -120,7 +137,10 @@ int main(int argc, const char * argv[]) {
     temp = insertLeaf(60, temp);
     temp = insertLeaf(80, temp);
     
+    copyTree(headLeaf);
     printLeaf(headLeaf);
+    printf("Copy Leaf\n");
+    printLeaf(headCopy);
     
     return 0;
 }
