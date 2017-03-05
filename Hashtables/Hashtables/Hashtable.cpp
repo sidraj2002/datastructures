@@ -13,33 +13,34 @@ using namespace std;
 Node::Node(){
     
     data = NULL;
-    nextP = NULL;
+   Node* nextP = NULL;
 };
 
 Node::~Node(){
     
 }
 
-Node* Node::InsertNode(Node* head, int data){
+Node* InsertNode(Node** head, int data){
     Node* temp = new Node();
-    temp = head;
-    if(temp->nextP == NULL){
+    if((*head)->nextP == NULL){
+        (*head)->data = data;
+        temp->nextP = *head;
+        *head = temp;
+    } else if((*head)->nextP!=NULL){
+        temp->nextP = *head;
         temp->data = data;
-        temp->nextP = NULL;
-    } else {
-        while(temp->nextP != NULL){
-            temp = temp->nextP;
-        };
-        InsertNode(temp, data);
+        (*head) = temp;
     }
-    return temp;
+    
+    return *head;
 };
 
-void Node::printNode(Node* head){
+/*
+void Node::printNode(Node** head){
     Node* temp = new Node();
     temp = head;
     while(temp->nextP != NULL){
         printf("%d\n", temp->data);
         temp = temp->nextP;
     }
-}
+} */

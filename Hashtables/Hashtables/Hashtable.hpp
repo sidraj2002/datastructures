@@ -17,12 +17,14 @@ public:
     Node* nextP;
     Node();
     ~Node();
-    Node* InsertNode(Node* head, int data);
-    void printNode(Node* head);
+    
+   // void printNode(Node* head);
     int data = NULL;
-private:
+    
+    private:
     
     
 };
+Node* InsertNode(Node** head, int data);
 
 #endif /* Hashtable_hpp */

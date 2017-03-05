@@ -12,18 +12,24 @@
 #include "Hashtable.hpp"
 
 using namespace std;
-Node head;
+Node* head;
 //Node* head = new Node();
 
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
+    Node temp2;
+    head = InsertNode (&head, 10);
+   // head = temp2;
+   head =  InsertNode (&head, 20);
+   // head = temp2;
+   head =  InsertNode (&head, 30);
+   // head = temp2;
+
+     //InsertNode(head, 20);
     
-    head = InsertNode (head, 10);
-    head = InsertNode(head, 20);
-    
-    printNode(head);
+  //Node printNode(head);
     
     return 0;
     
