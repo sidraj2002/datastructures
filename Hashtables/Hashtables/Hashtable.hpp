@@ -10,21 +10,22 @@
 #define Hashtable_hpp
 
 #include <stdio.h>
+#include <iostream>
+
+using namespace std;
 
 class Node
 {
-public:
+    int data = NULL;
     Node* nextP;
+public:
+    
     Node();
     ~Node();
-    
-   // void printNode(Node* head);
-    int data = NULL;
-    
-    private:
-    
-    
+    Node* InsertNode(Node* head, int data);
+    void printNode(Node* head);
+        private:
 };
-Node* InsertNode(Node** head, int data);
+
 
 #endif /* Hashtable_hpp */
