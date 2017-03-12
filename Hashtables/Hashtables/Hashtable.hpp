@@ -16,6 +16,7 @@ using namespace std;
 
 class Node
 {
+private:
     int data = NULL;
     Node* nextP;
 public:
@@ -24,7 +25,22 @@ public:
     ~Node();
     Node* InsertNode(Node* head, int data);
     void printNode(Node* head);
-        private:
+    Node* BubSort(Node* head);
+    Node* SwapNode(Node* head, int _elementId);
+    int* dataToArray(Node* head);
+};
+
+class Rectangle {
+    
+private:
+    int length = NULL;
+    int height = NULL;
+    
+public:
+    Rectangle(){};
+    ~Rectangle(){};
+    int Area (int x, int y);
+    friend int Volume(const Rectangle &param, int z);
 };
 
 
