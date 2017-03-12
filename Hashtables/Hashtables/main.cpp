@@ -34,21 +34,23 @@ int main(int argc, const char * argv[]) {
     
     
     Node temp2;
-    head =  head->InsertNode (head, 70);
-    head =  head->InsertNode (head, 40);
-    head =  head->InsertNode (head, 60);
+    head =  head->InsertNode (head, 10);
+    head =  head->InsertNode (head, 20);
+    head =  head->InsertNode (head, 30);
     head =  head->InsertNode (head, 40);
     head =  head->InsertNode (head, 50);
     head =  head->InsertNode (head, 60);
     head =  head->InsertNode (head, 70);
 //    head->~Node();
-//     head->printNode(head);
+     head->printNode(head);
+//    head->SwapNode(head, 3);
+//    head->printNode(head);
     
 //    head = head->BubSort(head);
 //    head->printNode(head);
-    head->dataToArray(head);
+//    head->dataToArray(head);
     
-    
+// Friend class example
     Rectangle Rect;
     Rect.Area(10,20);
    printf("%d\n", Volume(Rect, 30));

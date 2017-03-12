@@ -38,15 +38,17 @@ Node* Node::InsertNode(Node* head, int data){
 
 
 void Node::printNode(Node* head){
-    while(head!=NULL){
+
     Node* temp = new Node();
     temp = head;
-    while(temp->nextP != NULL){
+    while(temp!=NULL){
         printf("%d\n", temp->data);
         temp = temp->nextP;
     }
+
 }
-}
+
+//swap nodes in Linked List
 
 Node* Node::SwapNode(Node *head, int _elementId){
     Node* swaptemp;
@@ -67,6 +69,8 @@ Node* Node::SwapNode(Node *head, int _elementId){
     
     return swaptemp;
 }
+
+//attemp at Bubblesort directly to Linked List
 
 Node* Node::BubSort(Node *head){
     Node* temp = new Node();
@@ -95,6 +99,8 @@ Node* Node::BubSort(Node *head){
     
     return head;
 }
+
+//List to array
 
 int* Node::dataToArray(Node* head){
     int* var;
