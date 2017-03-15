@@ -11,6 +11,7 @@
 #include "Hashtable.hpp"
 #include <iostream>
 #include <pthread.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -232,7 +233,7 @@ void* returnSortA(int* array[], int arrayCount){
 }
 */
 
-///Hashtable///
+///Hashtable///===================================================================
 
 Hash::Hash(){
     
@@ -263,12 +264,24 @@ int Hash::Hashy(string entry){
 
 void Hash::printTable(Hash* table){
     
+    pid_t pidx;
+    
+    pidx = fork();
+    
+    if(pidx<0){
+        cout<<"Failed to initialize fork()"<<endl;
+    }else if(pidx == 0){
+    
     for(int i = 0; i< _tableSize; i++){
         cout<< "Table value Name = "<< table->Hashtable[i]->name <<endl;
         cout<< "Table value Age = "<< table->Hashtable[i]->age <<endl;
         cout<< "Table value Index = "<< i <<endl;
     }
+        exit(0);
+    }
+    //wait(NULL);
 }
+
 
 void Hash::addEntry(Hash* table, int index, string name, string age){
     

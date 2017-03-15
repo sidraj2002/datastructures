@@ -56,7 +56,7 @@ int* returnSum(int array[], int target);
 
 int* returnSort(int array[]);
 
-////Hashtable////
+////Hashtable////==================================================================
 
 class Hash {
     

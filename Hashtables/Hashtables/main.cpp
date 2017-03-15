@@ -12,6 +12,7 @@
  #include <string>
  #include "Hashtable.hpp"
  #include <pthread.h>
+#include <unistd.h>
 
  using namespace std;
  Node* head = new Node();
@@ -78,7 +79,7 @@
  
  */
  
- ///Hashtable///
+ ///Hashtable///==================================================================
  
      Hash* test = new Hash();
      
@@ -110,8 +111,11 @@
      test->addEntry(test, HashValue, "Aditi", "16");
      HashValue = test->Hashy("Amanda");
      test->addEntry(test, HashValue, "Amanda", "17");
-     //test->printTable(test);
-     test->LookUp(test, "Amanda");
+     
+     test->printTable(test);
+     test->LookUp(test, "Siddharth");
+   //  test->printTable(test);
+     //test->LookUp(test, "Amanda");
      
     
      return 0;
